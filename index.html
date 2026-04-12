@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THERMASHIELD - Ropa Térmica & Hidrofóbica para el Sur de Chile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .product-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .nav-scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">T</div>
+        <div>
+          <span class="font-bold text-2xl tracking-tight">THERMA</span><span class="font-bold text-2xl text-cyan-600">SHIELD</span>
+        </div>
+      </div>
+      
+      <div class="hidden md:flex items-center gap-8 font-medium">
+        <a href="#inicio" class="hover:text-cyan-600 transition-colors">Inicio</a>
+        <a href="#productos" class="hover:text-cyan-600 transition-colors">Productos</a>
+        <a href="#por-que" class="hover:text-cyan-600 transition-colors">¿Por qué nosotros?</a>
+        <a href="#testimonios" class="hover:text-cyan-600 transition-colors">Testimonios</a>
+        <a href="#contacto" class="hover:text-cyan-600 transition-colors">Contacto</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button onclick="toggleCart()" class="relative p-3 hover:bg-gray-100 rounded-2xl transition-colors">
+          <i class="fa-solid fa-shopping-bag text-xl"></i>
+          <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        </button>
+        <button onclick="window.location.href='#contacto'" 
+                class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-2xl font-semibold transition-all">
+          Comprar ahora
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="max-w-7xl mx-auto px-6 text-white">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+          Preparado para el Otoño y el duro Invierno del Sur
+        </div>
+        
+        <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+          Ropa que te protege<br>del <span class="text-cyan-400">frío y la lluvia</span>
+        </h1>
+        
+        <p class="text-xl text-gray-200 mb-10">
+          Camisetas térmicas, chaquetas hidrofóbicas y pantalones diseñados especialmente para el clima del sur de Chile. 
+          Mantente seco y caliente en Temuco, Valdivia, Puerto Montt, Coyhaique y más.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <button onclick="document.getElementById('productos').scrollIntoView({behavior: 'smooth'})" 
+                  class="bg-white text-gray-900 hover:bg-gray-100 px-10 py-4 rounded-3xl font-semibold text-lg flex items-center gap-3 transition-all">
+            Ver productos
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          
+          <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" 
+                  class="border-2 border-white/80 hover:border-white px-8 py-4 rounded-3xl font-medium text-lg transition-all">
+            Consultar por WhatsApp
+          </button>
+        </div>
+
+        <div class="mt-12 flex items-center gap-8 text-sm">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+            <span>100% Hidrofóbico</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-temperature-high text-orange-400"></i>
+            <span>Térmico hasta -15°C</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-recycle text-emerald-400"></i>
+            <span>Materiales reciclados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+      <div class="text-xs tracking-widest mb-2">SCROLL</div>
+      <div class="w-px h-12 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-cyan-600 font-semibold tracking-widest text-sm">EQUIPAMIENTO PARA EL SUR</span>
+        <h2 class="text-5xl font-bold mt-3">Nuestros productos estrella</h2>
+        <p class="mt-4 text-gray-600 max-w-md mx-auto">Diseñados y probados en el clima más exigente de Chile</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="productos-grid">
+        <!-- Productos se cargan con JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ NOSOTROS -->
+  <section id="por-que" class="py-24 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-12 gap-16 items-center">
+        <div class="md:col-span-5">
+          <h2 class="text-5xl font-bold leading-none">¿Por qué ThermaShield es la mejor opción en el sur?</h2>
+          <div class="mt-10 space-y-8">
+            <div class="flex gap-6">
+              <div class="w-12 h-12 bg-cyan-600/20 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">❄️</div>
+              <div>
+                <h4 class="font-semibold text-2xl">Tecnología térmica avanzada</h4>
+                <p class="mt-2 text-gray-400">Fibra hueca de poliéster reciclado que retiene el calor corporal incluso con lluvia intensa.</p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="w-12 h-12 bg-cyan-600/20 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">🌧️</div>
+              <div>
+                <h4 class="font-semibold text-2xl">Tratamiento hidrofóbico DWR</h4>
+                <p class="mt-2 text-gray-400">El agua se desliza literalmente sobre la tela. Probado en lluvias de 48 horas seguidas.</p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="w-12 h-12 bg-cyan-600/20 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">🧥</div>
+              <div>
+                <h4 class="font-semibold text-2xl">Confección local en el sur</h4>
+                <p class="mt-2 text-gray-400">Fabricado en Puerto Montt con costureras de la zona. Conocemos el clima mejor que nadie.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="md:col-span-7">
+          <img src="https://images.unsplash.com/photo-1622296089863-e2f9d0f9c4b0?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" 
+               alt="Hombre usando chaqueta térmica en lluvia del sur de Chile" 
+               class="rounded-3xl shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO / COMPRA -->
+  <section id="contacto" class="py-24 bg-gradient-to-br from-cyan-50 to-blue-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-5xl font-bold">¿Listo para enfrentar el invierno?</h2>
+        <p class="mt-4 text-xl text-gray-600">Déjanos tus datos y te contactamos en menos de 24 horas</p>
+      </div>
+
+      <form id="contact-form" action="https://formspree.io/f/tu-id-formspree" method="POST" 
+            class="bg-white rounded-3xl shadow-xl p-10">
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">Nombre completo</label>
+            <input type="text" name="nombre" required
+                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-cyan-600 transition-colors">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Teléfono / WhatsApp</label>
+            <input type="tel" name="telefono" required
+                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-cyan-600 transition-colors">
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">Ciudad (ej: Valdivia, Puerto Montt, Coyhaique)</label>
+          <input type="text" name="ciudad" required
+                 class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-cyan-600 transition-colors">
+        </div>
+
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">¿Qué producto te interesa?</label>
+          <select name="producto" required
+                  class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-cyan-600 transition-colors">
+            <option value="">Selecciona un producto...</option>
+            <option value="Camiseta térmica base">Camiseta térmica base</option>
+            <option value="Chaqueta hidrofóbica">Chaqueta hidrofóbica</option>
+            <option value="Pantalón térmico">Pantalón térmico</option>
+            <option value="Set completo invierno">Set completo invierno</option>
+            <option value="Otro">Otro (especificar abajo)</option>
+          </select>
+        </div>
+
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">Mensaje adicional (talla, color, etc.)</label>
+          <textarea name="mensaje" rows="4"
+                    class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none focus:border-cyan-600 transition-colors resize-y"></textarea>
+        </div>
+
+        <button type="submit"
+                class="mt-10 w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white py-5 rounded-3xl font-semibold text-lg transition-all duration-300">
+          ENVIAR SOLICITUD - Te contactamos pronto
+        </button>
+        
+        <p class="text-center text-xs text-gray-500 mt-6">
+          Tus datos están seguros • Respuesta en menos de 24h
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 text-2xl font-bold mb-6">
+            <div class="w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center">T</div>
+            THERMASHIELD
+          </div>
+          <p class="text-gray-400">Ropa técnica para el invierno más duro del sur de Chile.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Navegación</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#" class="hover:text-white">Inicio</a></li>
+            <li><a href="#" class="hover:text-white">Productos</a></li>
+            <li><a href="#" class="hover:text-white">Garantía</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contacto</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>+56 9 1234 5678</li>
+            <li>hola@thermashield.cl</li>
+            <li>Puerto Montt, Chile</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Síguenos</h4>
+          <div class="flex gap-4 text-2xl">
+            <a href="#" class="hover:text-cyan-400"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-cyan-400"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="hover:text-cyan-400"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-16 pt-8 text-center text-sm text-gray-500">
+        © 2026 ThermaShield - Hecho con ❤️ para los que viven el sur de verdad.
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRITO SIMPLE (modal) -->
+  <div id="cart-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
+    <div class="bg-white rounded-3xl max-w-md w-full mx-4 overflow-hidden">
+      <div class="p-6 border-b flex justify-between items-center">
+        <h3 class="font-semibold text-2xl">Tu carrito</h3>
+        <button onclick="toggleCart()" class="text-3xl leading-none">×</button>
+      </div>
+      <div id="cart-items" class="p-6 space-y-6 max-h-[60vh] overflow-auto">
+        <!-- JS rellena -->
+      </div>
+      <div class="p-6 border-t bg-gray-50">
+        <div class="flex justify-between text-lg font-semibold mb-6">
+          <span>Total</span>
+          <span id="cart-total">$0</span>
+        </div>
+        <button onclick="alert('¡Gracias! Redirigiendo al WhatsApp...')" 
+                class="w-full bg-green-600 text-white py-5 rounded-3xl font-semibold">
+          Finalizar por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tailwind script ya está cargado vía CDN
+
+    // Productos
+    const productos = [
+      {
+        id: 1,
+        nombre: "Camiseta Térmica Base Layer",
+        precio: 24990,
+        img: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
+        descripcion: "Mantiene el calor corporal. Ideal como primera capa."
+      },
+      {
+        id: 2,
+        nombre: "Chaqueta Hidrofóbica 3-en-1",
+        precio: 89990,
+        img: "https://images.unsplash.com/photo-1544022616-0f8f3c8f5c3f?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
+        descripcion: "Impermeable, transpirable y con forro térmico desmontable."
+      },
+      {
+        id: 3,
+        nombre: "Pantalón Térmico Softshell",
+        precio: 59990,
+        img: "https://images.unsplash.com/photo-1604176354201-9268730608-1c4c6c5b5b5c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80",
+        descripcion: "Protección total contra viento y lluvia en las piernas."
+      }
+    ];
+
+    // Renderizar productos
+    function renderProductos() {
+      const grid = document.getElementById('productos-grid');
+      grid.innerHTML = '';
+
+      productos.forEach(producto => {
+        const div = document.createElement('div');
+        div.className = 'product-card bg-white border border-gray-100 rounded-3xl overflow-hidden';
+        div.innerHTML = `
+          <img src="${producto.img}" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="font-semibold text-xl">${producto.nombre}</h3>
+            <p class="text-gray-500 text-sm mt-2">${producto.descripcion}</p>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-3xl font-bold">$${producto.precio.toLocaleString('es-CL')}</span>
+              <button onclick="agregarAlCarrito(${producto.id})" 
+                      class="bg-cyan-600 text-white px-6 py-3 rounded-2xl hover:bg-cyan-700 transition-colors">
+                Agregar
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
+    // Carrito simple
+    let carrito = [];
+
+    function agregarAlCarrito(id) {
+      const producto = productos.find(p => p.id === id);
+      carrito.push(producto);
+      actualizarCarrito();
+      
+      // Feedback visual
+      const notif = document.createElement('div');
+      notif.className = 'fixed bottom-6 right-6 bg-green-600 text-white px-6 py-3 rounded-2xl shadow-2xl';
+      notif.textContent = `${producto.nombre} agregado`;
+      document.body.appendChild(notif);
+      
+      setTimeout(() => notif.remove(), 2000);
+    }
+
+    function actualizarCarrito() {
+      document.getElementById('cart-count').textContent = carrito.length;
+      
+      const itemsContainer = document.getElementById('cart-items');
+      itemsContainer.innerHTML = '';
+      
+      let total = 0;
+      
+      carrito.forEach((item, index) => {
+        total += item.precio;
+        const div = document.createElement('div');
+        div.className = 'flex gap-4';
+        div.innerHTML = `
+          <img src="${item.img}" class="w-20 h-20 object-cover rounded-2xl">
+          <div class="flex-1">
+            <h4 class="font-medium">${item.nombre}</h4>
+            <p class="text-cyan-600 font-semibold">$${item.precio.toLocaleString('es-CL')}</p>
+          </div>
+          <button onclick="eliminarDelCarrito(${index})" class="text-red-500 hover:text-red-700">×</button>
+        `;
+        itemsContainer.appendChild(div);
+      });
+      
+      document.getElementById('cart-total').textContent = `$${total.toLocaleString('es-CL')}`;
+    }
+
+    function eliminarDelCarrito(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cart-modal');
+      modal.classList.toggle('hidden');
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+    });
+
+    // Formspree (cambia por tu ID real)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      // Puedes dejarlo así, Formspree lo maneja
+      console.log('Formulario enviado');
+    });
+
+    // Inicialización
+    window.onload = function() {
+      renderProductos();
+      
+      // Smooth scroll para enlaces
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          if (this.getAttribute('href') !== '#') {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    };
+  </script>
+</body>
+</html>
