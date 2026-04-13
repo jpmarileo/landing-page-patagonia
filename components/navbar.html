@@ -1,19 +1,35 @@
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md transition-all">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">T</div>
-      <span class="font-bold text-2xl tracking-tight">THERMA<span class="text-cyan-600">SHIELD</span></span>
-    </div>
     
-    <div class="hidden md:flex gap-8 font-medium">
-      <a href="index.html" class="hover:text-cyan-600">Inicio</a>
-      <a href="productos.html" class="hover:text-cyan-600">Productos</a>
-      <a href="about.html" class="hover:text-cyan-600">Nosotros</a>
-      <a href="contacto.html" class="hover:text-cyan-600">Contacto</a>
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">T</div>
+      <div class="font-bold text-2xl tracking-tight">THERMA<span class="text-cyan-600">SHIELD</span></div>
+    </a>
+
+    <!-- Menú desktop -->
+    <div class="hidden md:flex items-center gap-8 font-medium">
+      <a href="index.html" class="hover:text-cyan-600 transition-colors">Inicio</a>
+      <a href="productos.html" class="hover:text-cyan-600 transition-colors">Productos</a>
+      <a href="about.html" class="hover:text-cyan-600 transition-colors">Nosotros</a>
+      <a href="contacto.html" class="hover:text-cyan-600 transition-colors">Contacto</a>
     </div>
 
-    <a href="contacto.html" class="bg-cyan-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-cyan-700">
-      Comprar ahora
-    </a>
+    <!-- Botones derecha -->
+    <div class="flex items-center gap-4">
+      <!-- Botón del carrito con contador dinámico -->
+      <button onclick="toggleCart()" class="relative p-3 hover:bg-gray-100 rounded-2xl transition-colors">
+        <i class="fa-solid fa-shopping-bag text-xl"></i>
+        <span id="cart-count" 
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-medium w-5 h-5 flex items-center justify-center rounded-full">
+          0
+        </span>
+      </button>
+      
+      <a href="contacto.html" 
+         class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-2xl font-semibold transition-all">
+        Comprar
+      </a>
+    </div>
   </div>
 </nav>
