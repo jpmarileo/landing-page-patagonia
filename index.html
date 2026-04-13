@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THERMASHIELD - Ropa Térmica & Hidrofóbica para el Sur</title>
+  <title>THERMASHIELD - Ropa Térmica e Hidrofóbica para el Sur de Chile</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50">
 
   <!-- Navbar -->
   <div id="navbar"></div>
@@ -19,14 +19,22 @@
     <div class="max-w-7xl mx-auto px-6 text-white">
       <div class="max-w-2xl">
         <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
           Preparado para el Otoño y el duro Invierno del Sur
         </div>
+        
         <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
           Ropa que te protege<br>del <span class="text-cyan-400">frío y la lluvia</span>
         </h1>
+        
         <p class="text-xl text-gray-200 mb-10">
-          Camisetas térmicas, chaquetas hidrofóbicas y pantalones diseñados especialmente para el clima del sur de Chile.
+          Camisetas térmicas, chaquetas hidrofóbicas y pantalones diseñados y probados en el sur de Chile. 
+          Mantente seco y caliente en Valdivia, Puerto Montt, Coyhaique y todo el sur.
         </p>
+
         <div class="flex flex-wrap gap-4">
           <a href="productos.html" 
              class="bg-white text-gray-900 hover:bg-gray-100 px-10 py-4 rounded-3xl font-semibold text-lg inline-flex items-center gap-3 transition-all">
@@ -44,6 +52,12 @@
 
   <!-- Footer -->
   <div id="footer"></div>
+
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://wa.me/56912345678?text=Hola%20ThermaShield,%20quiero%20información%20sobre%20sus%20productos" 
+     target="_blank" class="whatsapp-float">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script src="js/main.js"></script>
 </body>
