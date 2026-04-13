@@ -1,37 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosotros - THERMASHIELD</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="bg-gray-50">
+# THERMASHIELD ❄️
 
-  <div id="navbar"></div>
+**Ropa térmica e hidrofóbica para el otoño e invierno del sur de Chile**
 
-  <section class="py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold">Fabricados en el Sur, para el Sur</h2>
-        <p class="mt-6 text-xl text-gray-600">Conocemos el clima patagónico mejor que nadie.</p>
-      </div>
+Sitio web oficial de ThermaShield - Equipamiento técnico diseñado y probado para el clima más exigente de la Patagonia chilena.
 
-      <div class="prose max-w-none text-lg text-gray-700">
-        <p>ThermaShield nace en Puerto Montt con el objetivo de crear ropa técnica realmente efectiva contra el frío, la lluvia y el viento del sur de Chile.</p>
-        <p>Usamos materiales de alta calidad, tratamiento hidrofóbico duradero y diseños probados por personas que viven en zonas como Chiloé, Aysén y Magallanes.</p>
-      </div>
-    </div>
-  </section>
+---
 
-  <div id="footer"></div>
+## 🌧️ ¿Qué es ThermaShield?
 
-  <a href="https://wa.me/56912345678" target="_blank" class="whatsapp-float">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+ThermaShield nace en el sur de Chile con el objetivo de ofrecer ropa realmente efectiva contra el frío, la lluvia intensa y el viento patagónico.
 
-  <script src="js/main.js"></script>
-</body>
-</html>
+Nuestros productos están pensados para personas que viven o viajan por zonas como:
+- Valdivia
+- Puerto Montt
+- Chiloé
+- Coyhaique
+- Aysén
+- Punta Arenas
+
+---
+
+## ✨ Características principales
+
+- **Tecnología térmica avanzada** – Retiene el calor corporal incluso con humedad
+- **Tratamiento hidrofóbico DWR** – El agua se desliza sobre la tela
+- **Materiales de alta calidad** – Suaves, transpirables y resistentes
+- **Confección local** – Fabricado en el sur de Chile
+- **Diseño práctico** – Pensado para el día a día en condiciones reales del sur
+
+---
+
+## 🛒 Productos disponibles
+
+- Camiseta Térmica Base Layer
+- Chaqueta Hidrofóbica 3-en-1
+- Pantalón Térmico Softshell
+- Sets completos para invierno
+
+---
+
+## 🚀 Tecnologías utilizadas
+
+- HTML5 + CSS3 + Tailwind CSS
+- JavaScript Vanilla (sin frameworks)
+- Estructura modular con componentes
+- Carrito de compras funcional
+- Integración con WhatsApp Business
+- Totalmente responsive (móvil y escritorio)
+
+---
+
+## 📱 Cómo funciona el sitio
+
+1. Los clientes pueden ver los productos
+2. Agregar al carrito (con cantidades)
+3. Ver el resumen del pedido
+4. Enviar el pedido directamente por WhatsApp con todos los detalles
+
+---
+
+## 📂 Estructura del proyecto
