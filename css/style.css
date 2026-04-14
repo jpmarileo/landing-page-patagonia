@@ -50,3 +50,18 @@ body {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+
+/* Mejora para navbar en móviles */
+nav {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* Evitar flickering en scroll */
+html {
+  scroll-padding-top: 70px;   /* ajusta según altura del navbar */
+}
+
+body {
+  padding-top: 0; /* importante para sticky */
+}
