@@ -208,15 +208,45 @@ function eliminarDelCarrito(index) {
 }
 
 function finalizarCompra() {
-  if (carrito.length === 0) return;
+  if (carrito.length === 0) {
+    alert("Tu carrito está vacío");
+    return;
+  }
 
-  let mensaje = "Hola ThermaShield, quiero comprar:\n\n";
+  let mensaje = "🛒 *Nuevo Pedido - ThermaShield*\n\n";
+  mensaje += "Hola, quiero realizar el siguiente pedido:\n\n";
+
+  let total = 0;
+
   carrito.forEach(item => {
-    mensaje += `• ${item.nombre} × ${item.cantidad || 1}\n`;
-  });
-  
-  const total = carrito.reduce((sum, item) => sum + item.precio * (item.cantidad || 1), 0);
-  mensaje += `\nTotal: $${total.toLocaleString('es-CL')}\n\n¿Podemos coordinar el pago y envío?`;
+    const cantidad = item.cantidad || 1;
+    const subtotal = item.precio * cantidad;
+    total += subtotal;
 
-  window.open(`https://wa.me/56982121220?text=${encodeURIComponent(mensaje)}`, '_blank');
+    mensaje += `• ${item.nombre}\n`;
+    mensaje += `   Cantidad: ${cantidad} unidades\n`;
+    mensaje += `   Precio unitario: $${item.precio.toLocaleString('es-CL')}\n`;
+    mensaje += `   Subtotal: $${subtotal.toLocaleString('es-CL')}\n\n`;
+  });
+
+  mensaje += `━━━━━━━━━━━━━━━\n`;
+  mensaje += `*TOTAL: $${total.toLocaleString('es-CL')}*\n\n`;
+  mensaje += "Por favor, indícanos:\n";
+  mensaje += "• Tu nombre completo\n";
+  mensaje += "• Ciudad / Región (ej: Puerto Montt, Valdivia, Coyhaique)\n";
+  mensaje += "• Tallas (si aplica)\n";
+  mensaje += "• Método de pago preferido (Transferencia / Webpay / Efectivo)\n\n";
+  mensaje += "¡Gracias! Te responderemos lo antes posible.";
+
+  // Tu número de WhatsApp (cámbialo por el tuyo)
+  const numeroWhatsApp = "56982121220";   // ←←← CAMBIA ESTE NÚMERO
+
+  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+  
+  window.open(url, '_blank');
+
+  // Opcional: vaciar el carrito después de enviar
+  // carrito = [];
+  // toggleCart();
+  // updateCartCount();
 }
