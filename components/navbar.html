@@ -1,10 +1,10 @@
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md transition-all">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-5 md:px-6 py-4 flex justify-between items-center">
     
     <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-      <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">T</div>
-      <div class="font-bold text-2xl tracking-tight">THERMA<span class="text-cyan-600">SHIELD</span></div>
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">T</div>
+      <div class="font-bold text-xl md:text-2xl tracking-tight">THERMA<span class="text-cyan-600">SHIELD</span></div>
     </a>
 
     <!-- Menú desktop -->
@@ -16,19 +16,16 @@
     </div>
 
     <!-- Botones derecha -->
-    <div class="flex items-center gap-4">
-      <!-- Botón del carrito con contador dinámico -->
-      <button onclick="toggleCart()" class="relative p-3 hover:bg-gray-100 rounded-2xl transition-colors">
+    <div class="flex items-center gap-3 md:gap-4">
+      <button onclick="toggleCart()" class="relative p-2.5 md:p-3 hover:bg-gray-100 rounded-2xl transition-colors">
         <i class="fa-solid fa-shopping-bag text-xl"></i>
-        <span id="cart-count" 
-              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-medium w-5 h-5 flex items-center justify-center rounded-full">
-          0
-        </span>
+        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-medium w-5 h-5 flex items-center justify-center rounded-full">0</span>
       </button>
       
+      <!-- Botón cambiado -->
       <a href="contacto.html" 
-         class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-2xl font-semibold transition-all">
-        Comprar
+         class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-2xl font-semibold text-sm md:text-base transition-all active:scale-95">
+        Quiero Comprar
       </a>
     </div>
   </div>
